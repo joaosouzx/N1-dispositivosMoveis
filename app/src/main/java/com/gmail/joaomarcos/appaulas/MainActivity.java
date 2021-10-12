@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
         alerta.setTitle("Excluir");
         alerta.setIcon(android.R.drawable.ic_delete);
-        alerta.setMessage("Confirma a exclusão do produto " + discSelecionada.getNome() + "?");
+        alerta.setMessage(getResources().getString(R.string.txtAlert) + discSelecionada.getNome() + "?");
         alerta.setNeutralButton("Cancelar", null);
         alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         listaDeDisciplinas = DisciplinaDAO.getDisciplinas(this);
 
         if(listaDeDisciplinas.size() == 0 ){
-            Disciplina fake = new Disciplina("Lista Vazia", "");
+            Disciplina fake = new Disciplina("Lista Vazia","", "");
             listaDeDisciplinas.add(fake);
             lvDisciplinas.setEnabled(false);
         }else{

@@ -14,6 +14,7 @@ public class DisciplinaDAO {
         ContentValues valores = new ContentValues();
         valores.put("nome", disciplina.getNome());
         valores.put("aula", disciplina.getAula());
+        valores.put("turno", disciplina.getTurno());
 
         Banco conn = new Banco(context);
         SQLiteDatabase sqLiteDatabase = conn.getWritableDatabase();
@@ -25,6 +26,7 @@ public class DisciplinaDAO {
         ContentValues valores = new ContentValues();
         valores.put("nome", disciplina.getNome());
         valores.put("aula", disciplina.getAula());
+        valores.put("turno", disciplina.getTurno());
 
         Banco conn = new Banco(context);
         SQLiteDatabase sqLiteDatabase = conn.getWritableDatabase();
@@ -55,6 +57,7 @@ public class DisciplinaDAO {
                 disc.setId(cursor.getInt(0));
                 disc.setNome(cursor.getString(1));
                 disc.setAula(cursor.getString(2));
+                disc.setTurno(cursor.getString(3));
                 lista.add(disc);
             }while (cursor.moveToNext());
         }
@@ -75,6 +78,7 @@ public class DisciplinaDAO {
             disc.setId(cursor.getInt(0));
             disc.setNome(cursor.getString(1));
             disc.setAula(cursor.getString(2));
+            disc.setTurno(cursor.getString(3));
 
             return disc;
         }else{

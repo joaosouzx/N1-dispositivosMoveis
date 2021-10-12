@@ -18,7 +18,8 @@ public class Banco extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(     "CREATE TABLE IF NOT EXISTS disciplinas (" +
                                     " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT  ," +
                                     " NOME TEXT NOT NULL , " +
-                                    " aula TEXT);"
+                                    " aula TEXT," +
+                                    " turno TEXT);"
                                 );
     }
 

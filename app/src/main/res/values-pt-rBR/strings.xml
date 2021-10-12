@@ -9,26 +9,26 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    
-    
+
+
     <string-array name="salas">
-        <item>select the room...</item>
-        <item>Room A</item>
-        <item>Room B</item>
-        <item>Room C</item>
+        <item>Selecione a sala...</item>
+        <item>Sala A</item>
+        <item>Sala B</item>
+        <item>Sala C</item>
     </string-array>
 
     <string-array name="turnos">
-        <item>select the shift...</item>
-        <item>Morning</item>
-        <item>Afternoon</item>
-        <item>Night</item>
+        <item>Selecione o turno...</item>
+        <item>Manhã</item>
+        <item>Tarde</item>
+        <item>Noite</item>
     </string-array>
 
-    <string name="txtHintDisc">Insert the discipline...</string>
+    <string name="txtHintDisc">Informe a disciplina...</string>
 
-    <string name="txtBtn">Save</string>
+    <string name="txtBtn">Salvar</string>
 
-    <string name="txtAlert">Are you sure you want to delete the discipline: </string>
+    <string name="txtAlert">Tem certeza que deseja deletar a disciplina: </string>
 
 </resources>

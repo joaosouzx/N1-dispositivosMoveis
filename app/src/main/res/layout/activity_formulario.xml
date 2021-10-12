@@ -12,7 +12,7 @@
         android:layout_height="63dp"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:hint="Nome da Disciplina..."
+        android:hint="@string/txtHintDisc"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -23,9 +23,10 @@
         android:id="@+id/spSalas"
         android:layout_width="343dp"
         android:layout_height="59dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="12dp"
         android:entries="@array/salas"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNome" />
 
@@ -33,9 +34,19 @@
         android:id="@+id/btnSalvar"
         android:layout_width="199dp"
         android:layout_height="57dp"
-        android:layout_marginTop="72dp"
-        android:text="Salvar"
+        android:layout_marginTop="12dp"
+        android:text="@string/txtBtn"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spTurnos" />
+
+    <Spinner
+        android:id="@+id/spTurnos"
+        android:layout_width="340dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:entries="@array/turnos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spSalas" />

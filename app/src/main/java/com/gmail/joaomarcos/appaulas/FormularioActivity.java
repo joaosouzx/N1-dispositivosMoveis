@@ -13,6 +13,7 @@ public class FormularioActivity extends AppCompatActivity {
 
     private EditText etNome;
     private Spinner spAulas;
+    private Spinner spTurnos;
     private Button btnSalvar;
     private String acao;
     private Disciplina disciplina;
@@ -24,6 +25,7 @@ public class FormularioActivity extends AppCompatActivity {
 
         etNome = findViewById(R.id.etNome);
         spAulas = findViewById(R.id.spSalas);
+        spTurnos = findViewById(R.id.spTurnos);
         btnSalvar = findViewById(R.id.btnSalvar);
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,12 +53,21 @@ public class FormularioActivity extends AppCompatActivity {
                 break;
             }
         }
+
+        String[] turnos = getResources().getStringArray(R.array.turnos);
+
+        for (int i = 0; i < turnos.length; i++){
+            if (disciplina.getTurno().equals(turnos[i])){
+                spTurnos.setSelection(i);
+                break;
+            }
+        }
     }
 
     private void salvar(){
         String nome = etNome.getText().toString();
 
-        if(nome.isEmpty() || spAulas.getSelectedItemPosition() == 0){
+        if(nome.isEmpty() || spAulas.getSelectedItemPosition() == 0 || spTurnos.getSelectedItemPosition() == 0){
             Toast.makeText(this, "Você deve preencher todos os campos!", Toast.LENGTH_LONG).show();
         }else {
 
@@ -65,11 +76,14 @@ public class FormularioActivity extends AppCompatActivity {
             }
             disciplina.setNome(nome);
             disciplina.setAula(spAulas.getSelectedItem().toString());
+            disciplina.setTurno(spTurnos.getSelectedItem().toString());
+
 
             if (acao.equals("inserir")) {
                 DisciplinaDAO.inserir(this, disciplina);
                 etNome.setText("");
                 spAulas.setSelection(0, true);
+                spTurnos.setSelection(0, true);
             }else{
                 DisciplinaDAO.editar(this, disciplina);
                 finish();

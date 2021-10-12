@@ -3,26 +3,28 @@ package com.gmail.joaomarcos.appaulas;
 public class Disciplina {
 
     public int id;
-    public String nome, aula;
+    public String nome, aula, turno;
 
     public Disciplina() {
 
     }
 
-    public Disciplina(String nome, String aula) {
+    public Disciplina(String nome, String aula, String turno) {
         this.nome = nome;
         this.aula = aula;
+        this.turno = turno;
     }
 
-    public Disciplina(int id, String nome, String aula) {
+    public Disciplina(int id, String nome, String aula, String turno) {
         this.id = id;
         this.nome = nome;
         this.aula = aula;
+        this.turno = turno;
     }
 
     @Override
     public String toString() {
-        return nome + "  |  " + aula;
+        return nome + "  |  " + aula + "  |  " + turno;
     }
 
     public int getId() {
@@ -47,5 +49,13 @@ public class Disciplina {
 
     public void setAula(String aula) {
         this.aula = aula;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
     }
 }
