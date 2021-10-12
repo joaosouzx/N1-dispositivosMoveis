@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
     private void excluir(int posicao){
         Disciplina discSelecionada = listaDeDisciplinas.get(posicao);
         AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-        alerta.setTitle("Excluir");
+        alerta.setTitle(getResources().getString(R.string.txtAlertTitle));
         alerta.setIcon(android.R.drawable.ic_delete);
         alerta.setMessage(getResources().getString(R.string.txtAlert) + discSelecionada.getNome() + "?");
-        alerta.setNeutralButton("Cancelar", null);
-        alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+        alerta.setNeutralButton(getResources().getString(R.string.txtCancelar), null);
+        alerta.setPositiveButton(getResources().getString(R.string.txtSim), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 DisciplinaDAO.excluir(MainActivity.this, discSelecionada.getId());
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         listaDeDisciplinas = DisciplinaDAO.getDisciplinas(this);
 
         if(listaDeDisciplinas.size() == 0 ){
-            Disciplina fake = new Disciplina("Lista Vazia","", "");
+            Disciplina fake = new Disciplina(getResources().getString(R.string.txtLista),"", "");
             listaDeDisciplinas.add(fake);
             lvDisciplinas.setEnabled(false);
         }else{

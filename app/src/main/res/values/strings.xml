@@ -29,6 +29,11 @@
 
     <string name="txtBtn">Save</string>
 
+    <string name="txtLista">Empty list</string>
+
+    <string name="txtAlertTitle">Delete</string>
     <string name="txtAlert">Are you sure you want to delete the discipline: </string>
+    <string name="txtCancelar">Cancel</string>
+    <string name="txtSim">Yes</string>
 
 </resources>
